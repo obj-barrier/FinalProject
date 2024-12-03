@@ -1,0 +1,9 @@
+Preproduction
+    The main goal is to create a simplified real-time version of Castle Panic (A co-op tower defense tabletop).
+    Enemies spawn and attack the castle from 6 directions, and players draw cards to defeat them.
+
+Aesthetic goals
+    Make players feel pressered and pray to the RNGesus.
+
+Core loop
+    Enemy spawn, draw card, play card on enemies.
