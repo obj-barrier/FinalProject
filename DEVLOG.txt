@@ -7,3 +7,8 @@ Aesthetic goals
 
 Core loop
     Enemy spawn, draw card, play card on enemies.
+
+2024.12.03
+    Made the map imitating the original game using only basic 3D objects.
+    Made enemies that spawn around the map, move towards the center, and rotate clockwise after reaching a tower.
+    Enemies destroy a wall / tower when contact and suffers 1 damage.

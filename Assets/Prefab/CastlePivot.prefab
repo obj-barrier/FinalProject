@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4958453982536217131}
   - component: {fileID: 2225664856517699113}
   - component: {fileID: 2488063181027978838}
+  - component: {fileID: 2556630602548484667}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -132,12 +133,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2556630602548484667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656645194877196077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bdd684bde8afc40bfaf5fae521da56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6358526338403795755
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +163,7 @@ GameObject:
   - component: {fileID: 71756468501494351}
   - component: {fileID: 1850041503150400070}
   - component: {fileID: 70401080151294842}
+  - component: {fileID: 4668485740045210428}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -237,7 +251,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -245,3 +259,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &4668485740045210428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358526338403795755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47b4bbbc145a524bbb006c503628561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
