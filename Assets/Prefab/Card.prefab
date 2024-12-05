@@ -236,8 +236,8 @@ GameObject:
   - component: {fileID: 3608776192050629411}
   - component: {fileID: 7244946850212887699}
   - component: {fileID: 5337293162270755880}
-  - component: {fileID: 3171037686145459843}
   - component: {fileID: -2496031788391687403}
+  - component: {fileID: 3171037686145459843}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -305,24 +305,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3171037686145459843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8039574603255119466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b31d5c01e86c34ab2c1d6e5a67dab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  region: 0
-  section: 0
-  damage: 1
-  iconSword: {fileID: 3052028993794113073}
-  iconBow: {fileID: 3357592056400674693}
-  iconThunder: {fileID: 3507849052762354581}
 --- !u!114 &-2496031788391687403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,3 +349,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3171037686145459843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039574603255119466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b31d5c01e86c34ab2c1d6e5a67dab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  region: 0
+  section: 0
+  damage: 1
+  iconSword: {fileID: 3052028993794113073}
+  iconBow: {fileID: 3357592056400674693}
+  iconThunder: {fileID: 3507849052762354581}

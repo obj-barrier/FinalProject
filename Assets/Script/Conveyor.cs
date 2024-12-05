@@ -103,7 +103,7 @@ public class Conveyor : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 1f;
         Vector3 viewPos = Camera.main.transform.position;
-        if(Physics.Raycast(viewPos, Camera.main.ScreenToWorldPoint(mousePos) - viewPos, out RaycastHit hit, 100f))
+        if(Physics.SphereCast(viewPos, 1f, Camera.main.ScreenToWorldPoint(mousePos) - viewPos, out RaycastHit hit, 100f))
         {
             if (hit.transform.TryGetComponent<EnemyController>(out var enemy))
             {
@@ -127,6 +127,14 @@ public class Conveyor : MonoBehaviour
         else
         {
             SoundManager.Instance.PlayCardAttackFail(); 
+        }
+    }
+
+    public void DiscardAll()
+    {
+        foreach (GameObject card in cardSlots)
+        {
+            Destroy(card);
         }
     }
 }

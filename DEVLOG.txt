@@ -6,7 +6,7 @@ Aesthetic goals
     Make players feel pressered and pray to the RNGesus.
 
 Core loop
-    Enemy spawn, draw card, play card on enemies.
+    Spawn enemy, draw card, play card on enemies.
 
 2024.12.03 Mudi Li
     Made the map imitating the original game using only basic 3D objects.
@@ -25,3 +25,8 @@ Core loop
 2024.12.04 Chengze Li
     Made SoundManager
     Made GameManager--Lose when all tower been destroyed, win when survived required time, press r to play again
+
+2024.12.05 Mudi Li
+    Changed the raycast method to spherecast to make aiming at small enemies easier.
+    Slowed the enemies down by a half, and made the spawner spawen 2 different-colored enemies in at a time.
+    Add a "Discard All" button so players can refresh the slots with a cooldown.
