@@ -13,7 +13,7 @@ Core loop
     Made enemies that spawn around the map, move towards the center, and rotate clockwise after reaching a tower.
     Enemies destroy a wall / tower when contact and suffers 1 damage.
 
-2024.12.04
+2024.12.04 Chengze Li
     Made cards with 3*3 different fields.
     Made a conveyor with 5 fixed slots.
     Conveyor randomly generate cards, destroy cards on click.
@@ -21,3 +21,7 @@ Core loop
 2024.12.04 Mudi Li
     Draw a line between mouse and selected card and enter aiming state on click, instead of destroying it.
     When clicking on an enemy in aiming state, compare its region and section to the aiming card, and attack it if match.
+
+2024.12.04 Chengze Li
+    Made SoundManager
+    Made GameManager--Lose when all tower been destroyed, win when survived required time, press r to play again

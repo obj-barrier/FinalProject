@@ -94,6 +94,7 @@ public class Conveyor : MonoBehaviour
         aimingIndex = slotIndex;
         aimingSource = card.transform.position;
         aimingSource.z = 1f;
+        SoundManager.Instance.PlayCardSelect();
     }
 
     private void TryAttack()
@@ -111,8 +112,21 @@ public class Conveyor : MonoBehaviour
                 {
                     enemy.Damage(attackCard.damage);
                     Destroy(attackCard.gameObject);
+                    SoundManager.Instance.PlayCardAttack(attackCard.section);
+                }
+                else
+                {
+                    SoundManager.Instance.PlayCardAttackFail(); 
                 }
             }
+            else
+            {
+                SoundManager.Instance.PlayCardAttackFail(); 
+            }
+        }
+        else
+        {
+            SoundManager.Instance.PlayCardAttackFail(); 
         }
     }
 }

@@ -76,9 +76,11 @@ public class EnemyController : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+            SoundManager.Instance.PlayEnemyDeath();
             return;
         }
         UpdateSize();
+        SoundManager.Instance.PlayEnemyHit();
     }
 
     public void DestroyTower(Vector3 towerPos)

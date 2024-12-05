@@ -8,5 +8,6 @@ public class WallController : MonoBehaviour
     {
         other.GetComponent<EnemyController>().Damage(1);
         Destroy(gameObject);
+        SoundManager.Instance.PlayWallDestroy();
     }
 }
