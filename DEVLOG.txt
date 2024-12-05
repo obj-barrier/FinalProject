@@ -8,11 +8,16 @@ Aesthetic goals
 Core loop
     Enemy spawn, draw card, play card on enemies.
 
-2024.12.03
+2024.12.03 Mudi Li
     Made the map imitating the original game using only basic 3D objects.
     Made enemies that spawn around the map, move towards the center, and rotate clockwise after reaching a tower.
     Enemies destroy a wall / tower when contact and suffers 1 damage.
+
 2024.12.04
-     Made cards with 3*3 different fields.
-     Made a conveyor with 5 fixed slots.
-     Conveyor randomly generate cards, destroy cards on click
+    Made cards with 3*3 different fields.
+    Made a conveyor with 5 fixed slots.
+    Conveyor randomly generate cards, destroy cards on click.
+
+2024.12.04 Mudi Li
+    Draw a line between mouse and selected card and enter aiming state on click, instead of destroying it.
+    When clicking on an enemy in aiming state, compare its region and section to the aiming card, and attack it if match.

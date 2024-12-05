@@ -1,15 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
 
 public class Conveyor : MonoBehaviour
 {
     public GameObject cardPrefab;
+    public LineRenderer aimLine;
     public float spawnDelay = 2f;
     public float startY = 100f;
-    public float cardSpacing = 200f; 
-    public float cardX = 100f;    
+    public float cardSpacing = 200f;
+    public float cardX = 100f;
+
+    private bool isAiming = false;
+    private int aimingIndex = -1;
+    private Vector3 aimingSource;
+
     private float spawnTimer = 0f;
     private GameObject[] cardSlots;
     private Vector2[] fixedPositions;
@@ -43,6 +49,24 @@ public class Conveyor : MonoBehaviour
         {
             spawnTimer -= Time.deltaTime;
         }
+
+        if (isAiming)
+        {
+            aimLine.enabled = true;
+            aimLine.SetPosition(0, Camera.main.ScreenToWorldPoint(aimingSource));
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 1f;
+            aimLine.SetPosition(1, Camera.main.ScreenToWorldPoint(mousePos));
+
+            if (Input.GetAxis("Fire1") > 0)
+            {
+                TryAttack();
+            }
+        }
+        else
+        {
+            aimLine.enabled = false;
+        }
     }
     private void MakeCard(int slotIndex)
     {
@@ -55,18 +79,40 @@ public class Conveyor : MonoBehaviour
         
         Card card = newCard.GetComponent<Card>();
         card.region = (Card.Region)Random.Range(0, 3);
-        card.section = (Card.Section)Random.Range(0, 3);
+        card.section = (Card.Section)Random.Range(1, 4);
         card.UpdateVisuals();
         
         Button button = newCard.GetComponent<Button>();
-        button.onClick.AddListener(() => OnCardUsed(newCard, slotIndex));
+        button.onClick.AddListener(() => OnCardSelect(newCard, slotIndex));
         
         cardSlots[slotIndex] = newCard;
     }
 
-    private void OnCardUsed(GameObject usedCard, int slotIndex)
+    private void OnCardSelect(GameObject card, int slotIndex)
     {
-        Destroy(usedCard);
-        cardSlots[slotIndex] = null;
+        isAiming = true;
+        aimingIndex = slotIndex;
+        aimingSource = card.transform.position;
+        aimingSource.z = 1f;
+    }
+
+    private void TryAttack()
+    {
+        isAiming = false;
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 1f;
+        Vector3 viewPos = Camera.main.transform.position;
+        if(Physics.Raycast(viewPos, Camera.main.ScreenToWorldPoint(mousePos) - viewPos, out RaycastHit hit, 100f))
+        {
+            if (hit.transform.TryGetComponent<EnemyController>(out var enemy))
+            {
+                Card attackCard = cardSlots[aimingIndex].GetComponent<Card>();
+                if (attackCard.region == enemy.region && attackCard.section == enemy.section)
+                {
+                    enemy.Damage(attackCard.damage);
+                    Destroy(attackCard.gameObject);
+                }
+            }
+        }
     }
 }

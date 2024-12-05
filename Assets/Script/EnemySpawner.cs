@@ -20,7 +20,9 @@ public class EnemySpawner : MonoBehaviour
                 Quaternion spawnRot = Quaternion.AngleAxis(60 * zone + 15 * degree, Vector3.up);
                 Vector3 spawnDist = new(0f, 2f, 45f);
                 GameObject enemy = Instantiate(enemyPrefab, spawnRot * spawnDist, Quaternion.identity, transform);
-                enemy.GetComponent<EnemyController>().SetHp(Random.Range(1, 4));
+                EnemyController enemyController = enemy.GetComponent<EnemyController>();
+                enemyController.region = (Card.Region)(zone / 2);
+                enemyController.SetHp(Random.Range(1, 4));
             }
             nextSpawn += interval;
         }
