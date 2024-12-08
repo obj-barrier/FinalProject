@@ -1,0 +1,54 @@
+Game Overview
+A tower defense game.
+Protect your towers by matching cards with incoming enemies.
+The scene has a color region (Red, Green, Blue) and a weapon type (Thunder, Bow, Sword).
+
+Objective
+Survive for 3 minutes (shown by timer in top right)
+Protect your 6 towers from enemies
+Use cards on enemies in specific area to defeat them
+
+How to Play
+Card Matching System
+1. Each card has:
+	A color (Red, Green, or Blue)
+	A weapon type (Thunder, Bow, or Sword)
+	Cards shows in the 5 slots on the left side
+	Can only attack enemy in corresponding area
+
+2. Each enemy (orange sphere) has:
+	Hit points from 1~3
+	Different size based on hp
+	Spwans in 1 of 6 directions and goes toward your tower in that direction.
+	When an enemy touches a wall, it loses 1 hp, destroys it, and goes for the tower if not killed.
+	When it touches a tower, it loses 1 hp, destroys it, and goes for the next tower clockwise if not killed.
+
+Controls
+Mouse: Use to aim and select cards
+Left Click: Select a card and shoot at enemies
+WASD/Arrow Keys: Move camera view
+R Key: Restart game when game is over
+
+Discard System
+A discard card on the right side of the conveyor
+Has a 30-second cooldown
+When clicked, discards all cards currently in your hand
+Use this when you have unfavorable cards
+
+Combat
+1. Click a card to select it
+2. Aim at an enemy (you'll see an aim line)
+3. Click again to attack
+4. To successfully damage an enemy:
+   - Card color must match region color that enemy in
+   - Card weapon type must match section type that enemy in
+   - Once an enemy is inside the castle, no card can damage it. (it can still kill itself by destroy towers.)
+
+The Castle
+You start with 6 towers
+Each tower has a wall in front of it(Enemy has to destroy wall first)
+You lose if all towers are destroyed
+
+Win/Lose Conditions
+Win: Survive until the timer reaches 0:00
+Lose: All 6 towers are destroyed by enemies
